@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root{--navy:#14233d;--gold:#c7a45a;--ink:#263247;--paper:#f7f5ef}
+*{box-sizing:border-box}body{margin:0;background:#eef1f5;color:#172033;font-family:'DM Sans',sans-serif}
+.top{height:76px;background:#101b30;color:white;display:flex;align-items:center;gap:13px;padding:0 max(5vw,24px);letter-spacing:1.5px}
+.brand-mark{width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:Georgia;font-size:25px}
+.top b{display:block;font-size:15px}.top small{display:block;font-size:9px;color:#b8c0ce;letter-spacing:2px;margin-top:4px}
+.layout{max-width:1450px;margin:36px auto;padding:0 24px;display:grid;grid-template-columns:390px minmax(0,1fr);gap:30px;align-items:start}
+.panel{background:white;border:1px solid #e1e5eb;border-radius:15px;padding:25px;box-shadow:0 10px 35px #14233d0c}
+.eyebrow,.preview-head{font-size:10px;font-weight:700;letter-spacing:2px;color:#9a7a3c}
+h1{font-size:25px;margin:9px 0}.muted,.fine,.preview-note{color:#788397;font-size:12px;line-height:1.6}
+form{margin-top:22px}label{display:block;font-size:11px;font-weight:700;color:#49546a;margin:13px 0}
+input,textarea{width:100%;margin-top:7px;padding:11px 12px;border:1px solid #dce1e8;border-radius:8px;font:13px 'DM Sans';color:#18243a;background:#fbfcfe;outline:none}
+input:focus,textarea:focus{border-color:#b99a5a;box-shadow:0 0 0 3px #c7a45a20}textarea{resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}
+button{border:0;border-radius:8px;padding:12px 10px;font-weight:700;font-size:12px;cursor:pointer}
+.primary{background:var(--navy);color:white}.secondary{background:#e9dfc9;color:#5c4722}.reset{background:transparent;color:#778196;width:100%;margin-top:8px}.fine{font-size:10px;margin-top:14px}
+.preview-wrap{min-width:0}.preview-head{display:flex;justify-content:space-between;margin:4px 0 12px}.live-dot{color:#398b67;letter-spacing:1px}
+.certificate{width:100%;aspect-ratio:1.414/1;background:var(--paper);padding:2.1%;box-shadow:0 15px 50px #14233d18;color:var(--ink);overflow:hidden}
+.inner{height:100%;border:5px solid var(--navy);outline:1px solid var(--gold);outline-offset:-12px;position:relative;text-align:center;padding:7% 8% 5%;display:flex;flex-direction:column;align-items:center}
+.community{font-weight:700;font-size:clamp(10px,1.5vw,19px);letter-spacing:3px;color:var(--navy)}
+.ornament{color:var(--gold);font-size:23px;margin:1.2%}
+.cert-title{font-family:'Playfair Display',serif;font-size:clamp(16px,2.6vw,34px);font-weight:700;letter-spacing:1px;margin:1% 0 4%}
+.intro{font-size:clamp(9px,1.3vw,16px)}.member{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;font-size:clamp(20px,3.7vw,49px);margin:2% 0;max-width:95%;overflow-wrap:anywhere}
+.gold-line{height:2px;background:var(--gold);width:65%;margin:1.5% 0 3%}
+.description{font-size:clamp(9px,1.25vw,15px);max-width:90%;min-height:1.5em}
+.period-label{font-size:clamp(8px,.9vw,12px);letter-spacing:2px;color:#a18143;font-weight:700;margin-top:4%}
+.period{font-family:'Playfair Display',serif;color:var(--navy);font-size:clamp(16px,2.4vw,30px);font-weight:700;margin-top:1%}
+.meta{font-size:clamp(7px,.85vw,11px);margin-top:3%;color:#566176}
+.signature{position:absolute;right:9%;bottom:9%;width:25%;text-align:center}.sig-name{font-weight:700;font-size:clamp(9px,1.2vw,15px)}.sig-line{border-top:1px solid var(--navy);margin:5px 0}.sig-role{font-size:clamp(7px,.8vw,10px);color:#657087}
+.qr-placeholder{position:absolute;left:9%;bottom:8%;width:9%;aspect-ratio:1;border:1px solid #d2c39e;display:grid;place-content:center;font-size:clamp(8px,1vw,13px);font-weight:700;color:var(--navy);background:repeating-linear-gradient(45deg,#fff,#fff 3px,#eee9dc 3px,#eee9dc 5px)}
+.qr-placeholder small{font-size:6px}.preview-note{font-size:11px}
+@media(max-width:900px){.layout{grid-template-columns:1fr;margin:20px auto}.preview-wrap{order:-1}.panel{padding:20px}}
+@media(max-width:520px){.layout{padding:0 12px}.two{grid-template-columns:1fr;gap:0}.certificate{min-width:520px}.preview-wrap{overflow-x:auto}.preview-head,.preview-note{position:sticky;left:0}}
