@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mineblox Certificate Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="top"><div class="brand-mark">M</div><div><b>MINEBLOX</b><small>COMMUNITY CERTIFICATE STUDIO</small></div></header>
+<main class="layout">
+  <section class="panel">
+    <div class="eyebrow">CERTIFICATE CREATOR</div>
+    <h1>Buat sertifikat member</h1>
+    <p class="muted">Isi nama dan kata-kata sesuai kebutuhan, lalu unduh sebagai PDF atau PNG.</p>
+    <form id="certForm" method="post">
+      <label>Nama member<input name="member_name" value="{{ data.member_name }}" maxlength="180" required></label>
+      <label>Judul sertifikat<input name="title" value="{{ data.title }}" maxlength="100"></label>
+      <label>Kalimat pembuka<input name="intro" value="{{ data.intro }}" maxlength="180"></label>
+      <label>Deskripsi<textarea name="description" rows="3" maxlength="180">{{ data.description }}</textarea></label>
+      <div class="two">
+        <label>Periode<input name="period" value="{{ data.period }}" maxlength="50"></label>
+        <label>Tanggal terbit<input name="issued_date" value="{{ data.issued_date }}" maxlength="50"></label>
+      </div>
+      <label>Nama komunitas<input name="community" value="{{ data.community }}" maxlength="80"></label>
+      <div class="two">
+        <label>Nama penandatangan<input name="signer" value="{{ data.signer }}" maxlength="80"></label>
+        <label>Jabatan<input name="role" value="{{ data.role }}" maxlength="80"></label>
+      </div>
+      <input type="hidden" name="certificate_id" value="{{ data.certificate_id }}">
+      <div class="actions">
+        <button type="submit" formaction="/download/pdf" class="primary">Download PDF</button>
+        <button type="submit" formaction="/download/png" class="secondary">Download PNG</button>
+      </div>
+      <button type="button" id="reset" class="reset">Reset template</button>
+    </form>
+    <p class="fine">Catatan: QR pada sertifikat berisi ID sertifikat sebagai identitas, bukan layanan verifikasi online.</p>
+  </section>
+
+  <section class="preview-wrap">
+    <div class="preview-head"><span>LIVE PREVIEW</span><span class="live-dot">● LIVE</span></div>
+    <div class="certificate" id="preview">
+      <div class="inner">
+        <div class="community pv" data-key="community">{{ data.community }}</div>
+        <div class="ornament">✦</div>
+        <div class="cert-title pv" data-key="title">{{ data.title }}</div>
+        <div class="intro pv" data-key="intro">{{ data.intro }}</div>
+        <div class="member pv" data-key="member_name">{{ data.member_name }}</div>
+        <div class="gold-line"></div>
+        <div class="description pv" data-key="description">{{ data.description }}</div>
+        <div class="period-label">MEMBERSHIP PERIOD</div>
+        <div class="period pv" data-key="period">{{ data.period }}</div>
+        <div class="meta">Certificate ID: <span class="pv" data-key="certificate_id">{{ data.certificate_id }}</span> &nbsp; • &nbsp; Issued: <span class="pv" data-key="issued_date">{{ data.issued_date }}</span></div>
+        <div class="qr-placeholder">QR<br><small>{{ data.certificate_id }}</small></div>
+        <div class="signature"><div class="sig-name pv" data-key="signer">{{ data.signer }}</div><div class="sig-line"></div><div class="sig-role pv" data-key="role">{{ data.role }}</div></div>
+      </div>
+    </div>
+    <p class="preview-note">Preview web untuk gambaran. File PDF/PNG dibuat dengan layout cetak A4 landscape.</p>
+  </section>
+</main>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
